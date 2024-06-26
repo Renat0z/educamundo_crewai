@@ -12,7 +12,9 @@ with st.sidebar:
     with st.form('adicionar_agente'):
         equipe = st.radio("Escolha o agente",
                           options=("Trancrição do youtube",
-                                   "Pesquisador" ))
+                                   "Pesquisador",
+                                   "Escritor",
+                                  ))
         st.form_submit_button('Escolher')
 
     ### SELECIONAR TIPO DE ENTRADA DE DADOS
@@ -155,6 +157,14 @@ def optar():
             Pesquisa
         )  # Certifique-se de que agente está no mesmo diretório ou no PYTHONPATH
         result = Pesquisa(prompt)
+
+        return result
+        
+    if equipe == "Escritor":
+        from escritor_C import (
+            escritor_de_blog
+        )  # Certifique-se de que agente está no mesmo diretório ou no PYTHONPATH
+        result = escritor_de_blog(prompt)
 
         return result
 
