@@ -541,7 +541,7 @@ result = crew.kickoff(inputs={
     'url': 'https://portal.educamundo.com.br/api_legado/teste-roteiro-agentes.txt'
 })
 
-def equipe(prompt):
+def team(prompt):
     return crew.kickoff(inputs={prompt})
 
 current_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
