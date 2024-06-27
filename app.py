@@ -14,6 +14,7 @@ with st.sidebar:
                           options=("Trancrição do youtube",
                                    "Pesquisador",
                                    "Escritor",
+                                   "Miguel",
                                   ))
         st.form_submit_button('Escolher')
 
@@ -165,6 +166,14 @@ def optar():
             escritor_de_blog
         )  # Certifique-se de que agente está no mesmo diretório ou no PYTHONPATH
         result = escritor_de_blog(prompt)
+
+        return result
+        
+    if equipe == "Miguel":
+        from Miguel import (
+            equipe
+        )  # Certifique-se de que agente está no mesmo diretório ou no PYTHONPATH
+        result = equipe(prompt)
 
         return result
 
