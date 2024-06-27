@@ -6,7 +6,7 @@ from crewai_tools import SerperDevTool, WebsiteSearchTool, FileReadTool, PDFSear
 from dotenv import load_dotenv
 from datetime import datetime
 from crewai import Agent, Task, Crew, Process
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 #from textwrap import dedent
 
@@ -19,15 +19,19 @@ warnings.filterwarnings('ignore')
 # Carregar as variáveis de ambiente do arquivo .env
 load_dotenv()
 
+os.environ["SERPER_API_KEY"] = "309cd7ec37d5cbb72aaea4d165a3ced705e4d12a" # serper.dev API key
+
+GROQ_API_KEY = "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" #console.groq.com API key
+
 # Configuração das chaves de API (substitua com suas chaves reais)
 openai_api_key = os.getenv("OPENAI_API_KEY")
 groq_api_key = os.getenv("GROQ_API_KEY")
 serper_api_key = os.getenv("SERPER_API_KEY")
 
-gpt3_llm = ChatOpenAI(model="gpt-3.5-turbo", api_key=openai_api_key)
-gpt4o_llm = ChatOpenAI(model="gpt-4o", api_key=openai_api_key)
-llama3_70b = ChatGroq(model="llama3-70b-8192", api_key=groq_api_key)
-llama3_8b = ChatGroq(model="llama3-8b-8192", api_key=groq_api_key)
+gpt3_llm = ChatGroq(model="llama3-70b-8192", api_key=GROQ_API_KEY)
+gpt4o_llm = ChatGroq(model="llama3-70b-8192", api_key=GROQ_API_KEY)
+llama3_70b = ChatGroq(model="llama3-70b-8192", api_key=GROQ_API_KEY)
+llama3_8b = ChatGroq(model="llama3-8b-8192", api_key=GROQ_API_KEY)
 
 serper = SerperDevTool(api_key=serper_api_key)
 scrape = ScrapeWebsiteTool()
