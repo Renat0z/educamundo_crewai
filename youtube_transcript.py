@@ -89,19 +89,6 @@ transcrever = Task(
     tools=[youtube_transcript],
 )
 
-resumir = Task(
-    description="""Resuma o texto da transcrição, no seguinte formato\n 
-    * Título: \n
-    * Principais informações: \n
-    * Informações secundárias: \n
-    * Informações complementares: \n
-    * Critica ao texto: 'escrever o que faltou' \n
-    * Associações: 'trazer outras informações relacionadas' \n
-    * Palavras-chave: palavras-chave\n
-    """,
-    expected_output="the summary of the transcription",
-    agent=transcritor,
-)
 
 crew = Crew(
     agents=[transcritor],
