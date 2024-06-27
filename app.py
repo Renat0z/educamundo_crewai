@@ -59,9 +59,6 @@ with st.sidebar:
             #adicionar na sessão de prompts
             st.session_state.selected_files.append(prompt)
 
-            #for chave, valor in prompt.items():
-            #      msg_usuario += f"{chave.capitalize()}: {valor}\n"
-
     ####################################
     ####################################
 
@@ -144,7 +141,7 @@ with st.sidebar:
 
 ## CARREGAR AGENTES DE OUTROS ARQUIVOS
 
-def optar():
+def optar(equipe, prompt):
     if equipe == "Trancrição do youtube":
         from youtube_transcript import (
             Transcription
@@ -207,7 +204,7 @@ for message in st.session_state.messages:
 ###
 # MOSTRAR RESPOSTA ASSISTENTE NO CHAT
 
-def criar_projeto(prompt):
+def criar_projeto(equipe, prompt):
 
     ##
     ### USUÁRIO
@@ -223,7 +220,7 @@ def criar_projeto(prompt):
 
     # EXECUTA E MOSTRA resposta do assistant no chat message container
 
-    response = f"**Equipe** {equipe}:\n\n " + optar()
+    response = f"**Equipe** {equipe}:\n\n " + optar(equipe, prompt)
 
     #mostra resposta do agente
     st.markdown(response)
@@ -237,10 +234,10 @@ def criar_projeto(prompt):
 ### EXECUÇÃO QUANDO APERTA O BOTÃO (CRIAR PROJETO)
 
 # ÚNICA LINHA
-if prompt:
-    criar_projeto(prompt)
+if option == "Preencher prompt" and st.session_state.selected_files:
+    criar_projeto(equipe, st.session_state.selected_files[0])
 
 #PROJETO COMPLETO
-if lista_prompts:
+if option == "Enviar arquivo" and lista_prompts:
     for prompt in lista_prompts:
-        criar_projeto(prompt)
+        criar_projeto(equipe, prompt)
