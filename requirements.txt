@@ -6,3 +6,6 @@ langchain_openai
 pandas
 python-dotenv
 youtube_transcript_api
+embedchain
+chromadb
+
