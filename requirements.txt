@@ -1,7 +1,7 @@
-crewai==0.35.0
-crewai_tools==0.4.0
+crewai
+crewai_tools
 langchain_groq
 langchain_openai
-pandas==2.2.2
-python-dotenv==1.0.1
-youtube_transcript_api==0.6.2
+pandas
+python-dotenv
+youtube_transcript_api
