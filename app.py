@@ -171,9 +171,9 @@ def optar():
         
     if equipe == "Miguel":
         from Miguel import (
-            equipe
+            team
         )  # Certifique-se de que agente está no mesmo diretório ou no PYTHONPATH
-        result = equipe(prompt)
+        result = team(prompt)
 
         return result
 
