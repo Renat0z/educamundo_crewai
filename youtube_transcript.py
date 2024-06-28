@@ -92,7 +92,7 @@ transcrever = Task(
 
 crew = Crew(
     agents=[transcritor],
-    tasks=[transcrever, resumir],
+    tasks=[transcrever],
     verbose=True,
 )
 
