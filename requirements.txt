@@ -8,4 +8,5 @@ python-dotenv
 youtube_transcript_api
 embedchain
 chromadb
+openpyxl
 
