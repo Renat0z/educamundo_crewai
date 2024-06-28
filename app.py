@@ -21,7 +21,7 @@ with st.sidebar:
     ### SELECIONAR TIPO DE ENTRADA DE DADOS
 
     option = st.selectbox("De onde vêm as informações do projeto?",
-                          ("Enviar arquivo", "Preencher prompt"))
+                          ("Preencher prompt", "Enviar arquivo"))
 
     ### SESSÃO PARA ARMAZENAR OS INPUTS
 
