@@ -12,8 +12,7 @@ with st.sidebar:
     with st.form('adicionar_agente'):
         equipe = st.radio("Escolha o agente",
                           options=("Trancrição do youtube",
-                                   "Pesquisador",
-                                   "Escritor",
+                                   "Analista_nicho",
                                    "Miguel",
                                   ))
         st.form_submit_button('Escolher')
@@ -150,7 +149,7 @@ def optar(equipe, prompt):
 
         return result
 
-    if equipe == "Pesquisador":
+    if equipe == "Analista_nicho":
         from pesquisador import (
             Pesquisa
         )  # Certifique-se de que agente está no mesmo diretório ou no PYTHONPATH
