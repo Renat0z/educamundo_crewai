@@ -20,9 +20,9 @@ warnings.filterwarnings('ignore')
 load_dotenv()
 
 # Configuração das chaves de API (substitua com suas chaves reais)
-openai_api_key = os.getenv("OPENAI_API_KEY")
-groq_api_key = os.getenv("GROQ_API_KEY")
-serper_api_key = os.getenv("SERPER_API_KEY")
+openai_api_key = os.getenv("sk-proj-X1ZrCAAJ6RS7AJfpx5yrT3BlbkFJWzaLgJkfHUvpMlOA3T2G")     ### CRIADA POR DECO EM 02/07/24 ###
+groq_api_key = os.getenv("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")       ### CRIADA POR DECO EM 02/07/24 ###
+serper_api_key = os.getenv("81de71363a8367f283b39b267cc4d29b3715712b")                     ### CRIADA POR DECO EM 02/07/24 ###                          
 
 gpt3_llm = ChatOpenAI(model="gpt-3.5-turbo", api_key=openai_api_key)
 gpt4o_llm = ChatOpenAI(model="gpt-4o", api_key=openai_api_key)
